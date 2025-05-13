@@ -1,16 +1,68 @@
 ---
-
+import Layout from '../components/layout/Layout.astro';
+import Section from '../components/common/Section.astro';
+import Button from '../components/ui/Button.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Mi portafolio | Brandon Corpas</title>
-	</head>
-	<body>
-		<h1 style="color: blue;">¡Bienvenido Brandon Corpas!</h1>
-	</body>
-</html>
+<Layout title="Inicio | Brandon Corpas" description="Portfolio personal de Brandon Corpas, desarrollador web">
+	<Section id="hero" className="hero-section" fullWidth={true}>
+		<div class="hero-content">
+			<h1>¡Bienvenido a mi Portfolio!</h1>
+			<p class="hero-text">Soy Brandon Corpas, desarrollador web enfocado en crear experiencias digitales excepcionales.</p>
+			<div class="hero-buttons">
+				<Button text="Ver proyectos" href="/proyectos" variant="primary" />
+				<Button text="Contacto" href="/contacto" variant="outline" />
+			</div>
+		</div>
+	</Section>
+
+	<Section title="Sobre mí" id="about">
+		<p>Información acerca de mi experiencia y habilidades profesionales.</p>
+	</Section>
+
+	<Section title="Proyectos destacados" id="featured-projects">
+		<p>Aquí van tus proyectos destacados.</p>
+	</Section>
+</Layout>
+
+<style>
+	.hero-section {
+		background-color: var(--color-secondary);
+		padding: 6rem 0;
+		text-align: center;
+	}
+
+	.hero-content {
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.hero-text {
+		font-size: 1.25rem;
+		max-width: 800px;
+		margin: 1.5rem auto 2rem;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	@media (max-width: 768px) {
+		.hero-section {
+			padding: 4rem 0;
+		}
+
+		.hero-text {
+			font-size: 1.1rem;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+	}
+</style>

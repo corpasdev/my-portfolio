@@ -1,0 +1,49 @@
+---
+interface Props {
+  title?: string;
+  id?: string;
+  className?: string;
+  fullWidth?: boolean;
+}
+
+const { 
+  title, 
+  id, 
+  className = '', 
+  fullWidth = false 
+} = Astro.props;
+---
+
+<section id={id} class={`section ${className}`}>
+  <div class={fullWidth ? 'full-width' : 'container'}>
+    {title && <h2 class="section-title">{title}</h2>}
+    <div class="section-content">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 2rem 0;
+    }
+    
+    .section-title {
+      margin-bottom: 1.5rem;
+    }
+  }
+</style> 

@@ -1,0 +1,64 @@
+---
+interface Props {
+  columns?: 1 | 2 | 3 | 4;
+  gap?: 'small' | 'medium' | 'large';
+  className?: string;
+}
+
+const { 
+  columns = 3, 
+  gap = 'medium', 
+  className = '' 
+} = Astro.props;
+
+const gapSize = {
+  small: '1rem',
+  medium: '2rem',
+  large: '3rem'
+};
+---
+
+<div class={`card-grid columns-${columns} gap-${gap} ${className}`}>
+  <slot />
+</div>
+
+<style define:vars={{ gapSize: gapSize[gap] }}>
+  .card-grid {
+    display: grid;
+    grid-gap: var(--gapSize);
+  }
+  
+  .columns-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  .columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @media (max-width: 1200px) {
+    .columns-4 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .columns-3, .columns-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .columns-2, .columns-3, .columns-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style> 
