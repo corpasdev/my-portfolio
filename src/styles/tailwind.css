@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 rounded font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-text hover:bg-gray-200;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-primary border border-primary hover:bg-blue-50;
+  }
+} 

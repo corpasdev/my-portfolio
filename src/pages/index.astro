@@ -7,9 +7,9 @@ import Button from '../components/ui/Button.astro';
 <Layout title="Inicio | Brandon Corpas" description="Portfolio personal de Brandon Corpas, desarrollador web">
 	<Section id="hero" className="hero-section" fullWidth={true}>
 		<div class="hero-content">
-			<h1>¡Bienvenido a mi Portfolio!</h1>
-			<p class="hero-text">Soy Brandon Corpas, desarrollador web enfocado en crear experiencias digitales excepcionales.</p>
-			<div class="hero-buttons">
+			<h1 class="text-4xl md:text-5xl font-bold mb-4">¡Bienvenido a mi Portfolio!</h1>
+			<p class="hero-text text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">Soy Brandon Corpas, desarrollador web enfocado en crear experiencias digitales excepcionales.</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<Button text="Ver proyectos" href="/proyectos" variant="primary" />
 				<Button text="Contacto" href="/contacto" variant="outline" />
 			</div>
@@ -17,52 +17,24 @@ import Button from '../components/ui/Button.astro';
 	</Section>
 
 	<Section title="Sobre mí" id="about">
-		<p>Información acerca de mi experiencia y habilidades profesionales.</p>
+		<div class="max-w-3xl mx-auto">
+			<p class="text-lg text-center text-gray-600">Información acerca de mi experiencia y habilidades profesionales.</p>
+		</div>
 	</Section>
 
 	<Section title="Proyectos destacados" id="featured-projects">
-		<p>Aquí van tus proyectos destacados.</p>
+		<div class="max-w-3xl mx-auto">
+			<p class="text-lg text-center text-gray-600">Aquí van tus proyectos destacados.</p>
+		</div>
 	</Section>
 </Layout>
 
 <style>
 	.hero-section {
-		background-color: var(--color-secondary);
-		padding: 6rem 0;
-		text-align: center;
+		@apply bg-secondary py-16 md:py-24 text-center;
 	}
 
 	.hero-content {
-		max-width: var(--container-width);
-		margin: 0 auto;
-		padding: 0 1.5rem;
-	}
-
-	.hero-text {
-		font-size: 1.25rem;
-		max-width: 800px;
-		margin: 1.5rem auto 2rem;
-	}
-
-	.hero-buttons {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-	}
-
-	@media (max-width: 768px) {
-		.hero-section {
-			padding: 4rem 0;
-		}
-
-		.hero-text {
-			font-size: 1.1rem;
-		}
-
-		.hero-buttons {
-			flex-direction: column;
-			align-items: center;
-			gap: 1rem;
-		}
+		@apply max-w-7xl mx-auto px-6;
 	}
 </style>
