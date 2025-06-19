@@ -1,0 +1,5 @@
+Markdown content and content collections.
+- Use content collections (`src/content`) with strong typing for structured content.
+- Prefer `.astro` for rendering static content.
+- Use Markdown strictly for content, not logic.
+- Optimize images with `<Image />` from `@astrojs/image`.

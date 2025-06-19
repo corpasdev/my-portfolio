@@ -1,40 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Section from '../components/common/Section.astro';
-import Button from '../components/ui/Button.astro';
+import "../styles/global.css";
 ---
 
-<Layout title="Inicio | Brandon Corpas" description="Portfolio personal de Brandon Corpas, desarrollador web">
-	<Section id="hero" className="hero-section" fullWidth={true}>
-		<div class="hero-content">
-			<h1 class="text-4xl md:text-5xl font-bold mb-4">¡Bienvenido a mi Portfolio!</h1>
-			<p class="hero-text text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">Soy Brandon Corpas, desarrollador web enfocado en crear experiencias digitales excepcionales.</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<Button text="Ver proyectos" href="/proyectos" variant="primary" />
-				<Button text="Contacto" href="/contacto" variant="outline" />
-			</div>
-		</div>
-	</Section>
-
-	<Section title="Sobre mí" id="about">
-		<div class="max-w-3xl mx-auto">
-			<p class="text-lg text-center text-gray-600">Información acerca de mi experiencia y habilidades profesionales.</p>
-		</div>
-	</Section>
-
-	<Section title="Proyectos destacados" id="featured-projects">
-		<div class="max-w-3xl mx-auto">
-			<p class="text-lg text-center text-gray-600">Aquí van tus proyectos destacados.</p>
-		</div>
-	</Section>
-</Layout>
-
-<style>
-	.hero-section {
-		@apply bg-secondary py-16 md:py-24 text-center;
-	}
-
-	.hero-content {
-		@apply max-w-7xl mx-auto px-6;
-	}
-</style>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/faviconx32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/faviconx16.png">
+    <title>Brandon Corpas - Portafolio</title>
+  </head>
+  <body class="min-h-screen bg-dark text-light flex items-center justify-center font-sans">
+    <main class="bg-light text-dark p-8 rounded-2xl shadow-2xl max-w-md w-full text-center space-y-4 border border-muted">
+      <img src="/images/profile/profile.jpg" alt="Foto de Brandon Corpas" class="w-24 h-24 mx-auto rounded-full border-4 border-primary" />
+      <h1 class="text-2xl font-bold">Brandon Corpas</h1>
+      <p class="text-sm leading-relaxed">
+        Soy un desarrollador web <strong class="text-primary">Full-stack</strong> e <strong class="text-primary">Ingeniero de Sistemas en formación</strong>.<br/>
+        Ayudo a desarrollar soluciones web como sitios, aplicaciones, landing pages, portales y portafolios profesionales.<br/>
+        También puedo integrarme en equipos colaborativos, aportando desde el rol de Full-stack developer y compartiendo mis conocimientos técnicos para alcanzar los objetivos del proyecto.
+      </p>
+    </main>
+  </body>
+</html>

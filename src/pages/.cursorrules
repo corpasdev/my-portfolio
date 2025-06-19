@@ -1,0 +1,12 @@
+Rules for Astro page components.
+- Implement SEO best practices: use <title>, <meta>, sitemap, and robots.txt.
+- Defer JavaScript when possible (`client:idle`, `client:visible`).
+- Use clean and semantic route names (e.g., about.astro, index.astro).
+- Use Island Architecture properly.
+- Only hydrate interactivity when absolutely necessary.
+- Avoid `dangerouslySetInnerHTML` unless content is properly sanitized.
+- Include SEO meta tags per page:
+  ---
+  import { Meta } from '@/components/Meta.astro';
+  ---
+  <Meta title="Page Title" description="SEO description here" />

@@ -1,61 +1,8 @@
-@import 'tailwind.css';
+@import "tailwindcss";
 
-/* Variables CSS personalizadas */
-:root {
-  --color-primary: #0077cc;
-  --color-secondary: #f9f9f9;
-  --color-text: #333;
-  --color-text-light: #666;
-  --color-border: #eaeaea;
-  --container-width: 1200px;
+@theme {
+    --color-dark: #0F172A;
+    --color-primary: #22D3EE;
+    --color-muted: #64748B;
+    --color-light: #F4F4F4;
 }
-
-/* Estilos específicos que complementan a Tailwind */
-.layout-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-  padding: 2rem 0;
-}
-
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* Estilos para secciones */
-.section {
-  padding: 4rem 0;
-}
-
-.section-title {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 2rem 0;
-  }
-  
-  .section-title {
-    margin-bottom: 1.5rem;
-  }
-} 

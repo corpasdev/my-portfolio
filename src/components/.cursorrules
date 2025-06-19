@@ -1,0 +1,11 @@
+Astro and UI components.
+
+- Components should be reusable and self-contained.
+- Use typed props with TypeScript.
+- Implement scoped styling for each component.
+- Use `@apply` in `.css` for reusable utility styles.
+- Avoid redundant or excessive Tailwind class usage.
+- Apply smooth animations using `transition`, `duration`, `ease-in-out`.
+- Colors, typography, and spacing should come from `tailwind.config.js`.
+- Ensure accessibility: use `aria-label`, `alt`, and maintain proper color contrast.
+

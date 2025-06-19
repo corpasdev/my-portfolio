@@ -105,4 +105,19 @@
   - Use Lighthouse and WebPageTest for performance auditing.
   - Implement performance budgets and monitoring.
 
+  Astro project using TypeScript and Tailwind CSS.
+  - Modularize your code: split into reusable and isolated components.
+  - Use `.astro` or `.jsx/.ts` depending on component type and interactivity.
+  - Use custom layouts to avoid repeating base HTML structure.
+  - Use semantic HTML: prefer tags like <article>, <section>, <nav>, etc.
+  - Responsive design using Tailwind CSS (media queries only when needed).
+  - Optimize performance: minimize CSS/JS, use lazy loading, and always use TypeScript.
+  - Avoid excessive inline JavaScript. Keep logic in separate modules/components.
+  - Prioritize fast loading and mobile-first design.
+  - User Experience:
+    - Clear and intuitive navigation.
+    - Visual feedback for actions (loading, success, error).
+    - Avoid full-page reloads whenever possible.
+
+
   Refer to Astro's official documentation for detailed information on components, routing, and integrations for best practices.

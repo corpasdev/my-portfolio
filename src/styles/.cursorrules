@@ -1,0 +1,6 @@
+Tailwind CSS configuration and style utilities.
+- Avoid redundant or bloated class names.
+- Use `@apply` in CSS files to reuse common style patterns.
+- Customize theme tokens (colors, fonts, spacing, breakpoints) via `tailwind.config.js`.
+- Follow a mobile-first design approach.
+- Configure dark mode using the `'class'` strategy and control it via <html class="dark">.
