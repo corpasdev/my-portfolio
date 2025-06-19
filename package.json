@@ -9,12 +9,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "start": "serve ./dist",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^9.2.2",
     "@astrojs/sitemap": "^3.4.1",
-    "astro": "^5.9.4"
+    "astro": "^5.9.4",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.10",
