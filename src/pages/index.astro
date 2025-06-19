@@ -1,25 +1,22 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/faviconx32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/faviconx16.png">
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Brandon Corpas - Portafolio</title>
-  </head>
-  <body class="min-h-screen bg-dark text-light flex items-center justify-center font-sans">
-    <main class="bg-light text-dark p-8 rounded-2xl shadow-2xl max-w-md w-full text-center space-y-4 border border-muted">
-      <img src="/images/profile/profile.jpg" alt="Foto de Brandon Corpas" class="w-24 h-24 mx-auto rounded-full border-4 border-primary" />
-      <h1 class="text-2xl font-bold">Brandon Corpas</h1>
-      <p class="text-sm leading-relaxed">
-        Soy un desarrollador web <strong class="text-primary">Full-stack</strong> e <strong class="text-primary">Ingeniero de Sistemas en formación</strong>.<br/>
-        Ayudo a desarrollar soluciones web como sitios, aplicaciones, landing pages, portales y portafolios profesionales.<br/>
-        También puedo integrarme en equipos colaborativos, aportando desde el rol de Full-stack developer y compartiendo mis conocimientos técnicos para alcanzar los objetivos del proyecto.
-      </p>
-    </main>
-  </body>
-</html>
+<BaseLayout title="Brandon Corpas - Portafolio" description="Página De Inicio">
+  <img
+  src="/images/profile/profile.jpg"
+  alt="Foto de Brandon Corpas"
+  class="w-24 h-24 mx-auto rounded-full border-4 border-primary"
+  />
+  <h1 class="text-2xl font-bold">Brandon Corpas</h1>
+  <p class="text-sm leading-relaxed">
+    Soy un desarrollador web <strong class="text-primary">Full-stack</strong> e <strong
+      class="text-primary">Ingeniero de Sistemas en formación</strong
+    >.<br />
+    Ayudo a desarrollar soluciones web como sitios, aplicaciones, landing pages, portales
+    y portafolios profesionales.<br />
+    También puedo integrarme en equipos colaborativos, aportando desde el rol de Full-stack
+    developer y compartiendo mis conocimientos técnicos para alcanzar los objetivos
+    del proyecto.
+  </p>
+</BaseLayout>

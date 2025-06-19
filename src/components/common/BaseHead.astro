@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/icons/faviconx32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/icons/faviconx16.png"
+/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="description" content={description}>
+<title>{title}</title>
