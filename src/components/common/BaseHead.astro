@@ -23,3 +23,11 @@ const { title, description } = Astro.props;
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="description" content={description}>
 <title>{title}</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://brandoncorpas.com/" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content="https://brandoncorpas.com/images/thumbnail.jpg" />
+<meta property="og:image:alt" content="Brandon Corpas - Full-Stack Web Developer. Imagen con fondo degradado oscuro y texto profesional al centro que presenta el nombre del desarrollador y su rol tecnológico." />
