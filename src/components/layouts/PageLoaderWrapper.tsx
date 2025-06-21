@@ -64,8 +64,7 @@ const PageLoaderWrapper = ({
         {isLoading && (
           <PageLoader
             onComplete={() => setIsLoading(false)}
-            showText={true}
-            duration={5000}
+            showText={showText}
           />
         )}
       </AnimatePresence>

@@ -1,7 +1,7 @@
 'use client';
 
-import MobileMenu from './MobileMenu';
-import { useMobileMenu } from './useMobileMenu';
+import MobileMenu from '../navigation/MobileMenu';
+import { useMobileMenu } from '../hooks/useMobileMenu';
 
 const MobileMenuWrapper = () => {
   const { isOpen, toggle, close } = useMobileMenu();

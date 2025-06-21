@@ -1,0 +1,58 @@
+---
+import ReadMoreToggle from '../ui/ReadMoreToggle';
+---
+
+<!-- About Me Section -->
+<div class="space-y-8 w-full">
+  
+  <!-- Profile Image -->
+  <div class="profile-wrapper">
+    <div class="relative inline-block">
+      <img 
+        src="/images/profile/profile.jpg" 
+        alt="Brandon Corpas - Desarrollador Full Stack"
+        class="profile-image w-56 h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 rounded-3xl object-cover border-4 border-primary/20 shadow-2xl"
+      />
+      <!-- Decorative border -->
+      <div class="absolute inset-0 rounded-3xl border-2 border-primary/30"></div>
+    </div>
+  </div>
+
+  <!-- About Content -->
+  <div class="space-y-4 xl:space-y-6">
+    <!-- Párrafos visibles inicialmente -->
+    <p class="text-muted text-base xl:text-lg leading-relaxed">
+      Soy desarrollador web Full-Stack e <span class="text-light">ingeniero de sistemas</span> en formación, y ayudo a transformar ideas en experiencias digitales funcionales, efectivas y alineadas con los objetivos de cada cliente.
+    </p>
+    <p class="text-muted text-base xl:text-lg leading-relaxed">
+      Diseño y desarrollo soluciones web modernas como sitios corporativos, aplicaciones, landing pages, portales y portafolios profesionales. Ya sea trabajando de forma independiente o como parte de un equipo, aporto valor desde el rol de <span class="text-light">Full-Stack developer</span>, aplicando el aprendizaje adquirido en cada proyecto que he construido.
+    </p>
+
+    <!-- Componente React con Framer Motion para "Leer más" -->
+    <ReadMoreToggle client:load>
+      <div class="space-y-4 xl:space-y-6">
+        <p class="text-muted text-base xl:text-lg leading-relaxed">
+          No solo creo productos digitales: acompaño todo el proceso, desde la planeación hasta la entrega final. Ofrezco <span class="text-light">atención personalizada</span>, <span class="text-light">soporte técnico gratuito</span> y <span class="text-light">garantía de calidad</span>. Cada solución que desarrollo está pensada para resolver una necesidad real, mejorar la presencia digital y generar resultados concretos.
+        </p>
+        <p class="text-muted text-base xl:text-lg leading-relaxed">
+          <span class="text-light">Trabajo contigo, no solo para ti.</span> Mi enfoque está en comprender tus metas y convertirlas en herramientas digitales que impulsen tu crecimiento.
+        </p>
+        <p class="text-muted text-base xl:text-lg leading-relaxed">
+          Y cuando no estoy programando, probablemente estoy paseando a mis <span class="text-light">tres perros</span>, jugando <span class="text-light">fútbol</span> con mi hermano o dejando que la <span class="text-light">música</span> me inspire para el siguiente desafío creativo.
+        </p>
+      </div>
+    </ReadMoreToggle>
+  </div>
+
+</div>
+
+<style>
+  .profile-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2);
+  }
+</style> 
