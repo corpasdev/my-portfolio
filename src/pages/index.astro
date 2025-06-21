@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/sections/Hero.astro";
 import About from "@components/sections/About.astro";
 import Experience from "@components/sections/Experience.astro";
+import Projects from "@components/sections/Projects.astro";
 
 const title = "Brandon Corpas";
 const description =
@@ -29,6 +30,11 @@ const description =
         <section class="flex-1 flex items-center justify-center py-8 bg-gradient-to-b from-dark/95 to-dark/90">
           <Experience />
         </section>
+
+        <!-- Projects Section for Mobile -->
+        <section class="flex-1 flex items-center justify-center py-8 bg-gradient-to-b from-dark/90 to-dark/85">
+          <Projects />
+        </section>
       </div>
     </div>
 
@@ -52,6 +58,11 @@ const description =
           <!-- Experience Section -->
           <section id="experiencia" class="min-h-screen flex items-center justify-center">
             <Experience />
+          </section>
+
+          <!-- Projects Section -->
+          <section id="proyectos" class="min-h-screen flex items-center justify-center">
+            <Projects />
           </section>
         </div>
       </main>
