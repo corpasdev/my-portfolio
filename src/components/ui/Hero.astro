@@ -1,0 +1,451 @@
+---
+// Hero component para la página principal
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="hero-section min-h-screen bg-dark">
+  
+  <!-- Mobile Layout -->
+  <div class="lg:hidden flex items-center justify-center px-4 py-12 min-h-screen">
+    <div class="hero-container max-w-md mx-auto text-center space-y-8">
+      
+      <!-- Profile Image -->
+      <div class="profile-wrapper">
+        <div class="relative inline-block">
+          <img 
+            src="/images/profile/profile.jpg" 
+            alt="Brandon Corpas - Desarrollador Full Stack"
+            class="profile-image w-32 h-32 rounded-full object-cover border-4 border-primary/20 shadow-2xl mx-auto"
+          />
+          <!-- Decorative ring -->
+          <div class="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse"></div>
+          <!-- Status indicator -->
+          <div class="absolute bottom-2 right-2 w-6 h-6 bg-primary rounded-full border-4 border-dark flex items-center justify-center">
+            <div class="w-2 h-2 bg-dark rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Heading -->
+      <header class="hero-header space-y-4">
+        <h1 class="hero-title text-4xl font-bold text-light leading-tight">
+          Hola, soy
+          <span class="text-primary block mt-2">Brandon Corpas</span>
+        </h1>
+        
+        <h2 class="hero-subtitle text-xl font-light text-light">
+          Desarrollador Full Stack
+        </h2>
+      </header>
+
+      <!-- Description -->
+      <div class="hero-description space-y-4">
+        <p class="text-muted text-lg leading-relaxed">
+          Especializado en crear experiencias web modernas y escalables con tecnologías de vanguardia.
+        </p>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="hero-cta space-y-4">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://api.whatsapp.com/send?phone=573332557619&text=Hola%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-primary inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/25 transform hover:scale-105"
+          >
+            <span>Contáctame</span>
+            <!-- WhatsApp Icon -->
+            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            <!-- Arrow Icon -->
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          
+          <a 
+            href="/resume.pdf" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-secondary inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-dark transition-all duration-300"
+          >
+          Descargar CV
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator mt-12">
+        <div class="flex flex-col items-center space-y-2 text-muted">
+          <span class="text-sm">Desliza para conocer más</span>
+          <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Desktop Layout -->
+  <div class="hidden lg:flex h-screen mt-8">
+    
+    <!-- Fixed Left Column (Aside) -->
+    <aside class="fixed top-16 w-1/2 max-w-[35%] h-screen bg-dark block pr-0 pl-0 flex items-center justify-center px-8 xl:px-0">
+      <div class="max-w-md xl:max-w-lg xl:space-y-4">
+        
+        <!-- Main Heading -->
+        <header class="hero-header space-y-4 xl:space-y-6">
+          <h1 class="hero-title font-bold text-light leading-tight xl:mb-[12px]">
+            <span class="text-base text-light">Hola, soy</span>
+            <span class="text-primary block mt-2 mb-2 xl:mb-[12px] text-3xl xl:text-4xl">Brandon Corpas</span>
+          </h1>
+          
+          <h2 class="hero-subtitle text-lg xl:text-xl font-light text-light">
+            Desarrollador Full Stack
+          </h2>
+        </header>
+
+        <!-- Description -->
+        <div class="hero-description space-y-4 xl:space-y-6">
+          <p class="text-muted text-base xl:text-[17px] leading-relaxed">
+            Especializado en crear experiencias web modernas y escalables con tecnologías de vanguardia.
+          </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="hero-cta space-y-6 mt-12">
+          <div class="flex flex-col xl:flex-row gap-4">
+            <a 
+              href="https://api.whatsapp.com/send?phone=573332557619&text=Hola%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-primary inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/25 transform hover:scale-105 text-sm xl:text-base"
+            >
+              <span>Contáctame</span>
+              <!-- WhatsApp Icon -->
+              <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              <!-- Arrow Icon -->
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            
+            <a 
+              href="/resume.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-secondary inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-dark transition-all duration-300 text-sm xl:text-base"
+            >
+            Descargar CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="desktop-nav mt-8 xl:mt-12">
+          <ul class="space-y-3 xl:space-y-2">
+            <li>
+              <a href="#sobre-mi" class="nav-link-enhanced active flex items-center text-sm font-bold group">
+                <div class="nav-line"></div>
+                <span class="nav-text">SOBRE MÍ</span>
+              </a>
+            </li>
+            <li>
+              <a href="#experiencia" class="nav-link-enhanced flex items-center text-sm font-bold group">
+                <div class="nav-line"></div>
+                <span class="nav-text">EXPERIENCIA</span>
+              </a>
+            </li>
+            <li>
+              <a href="#proyectos" class="nav-link-enhanced flex items-center text-sm font-bold group">
+                <div class="nav-line"></div>
+                <span class="nav-text">PROYECTOS</span>
+              </a>
+            </li>
+            <li>
+              <a href="#servicios" class="nav-link-enhanced flex items-center text-sm font-bold group">
+                <div class="nav-line"></div>
+                <span class="nav-text">SERVICIOS</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contactos" class="nav-link-enhanced flex items-center text-sm font-bold group">
+                <div class="nav-line"></div>
+                <span class="nav-text">CONTACTOS</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+      </div>
+    </aside>
+
+    <!-- Scrollable Right Column -->
+    <main class="ml-auto w-1/2 min-h-screen flex items-center justify-center">
+      <div class="flex justify-center h-screen w-full pr-8 xl:pr-12">
+        
+        <!-- About Me Section -->
+        <div class="space-y-8 w-full">
+          
+                     <!-- Profile Image -->
+           <div class="profile-wrapper">
+             <div class="relative inline-block">
+               <img 
+                 src="/images/profile/profile.jpg" 
+                 alt="Brandon Corpas - Desarrollador Full Stack"
+                 class="profile-image w-56 h-56 xl:w-72 xl:h-72 2xl:w-80 2xl:h-80 rounded-3xl object-cover border-4 border-primary/20 shadow-2xl"
+               />
+               <!-- Decorative border -->
+               <div class="absolute inset-0 rounded-3xl border-2 border-primary/30"></div>
+             </div>
+           </div>
+
+                     <!-- About Content -->
+           <div class="space-y-4 xl:space-y-6">
+             <p class="text-muted text-base xl:text-lg leading-relaxed">
+               Donec nec dolor tortor. Pellentesque nibh lacus, laoreet et finibus non, convallis ut enim. Nunc dapibus ornare erat id malesuada. Donec tincidunt cursus purus. Quisque elementum blandit elementum.
+             </p>
+             
+             <p class="text-muted text-base xl:text-lg leading-relaxed">
+               Donec nec dolor tortor. Pellentesque nibh lacus, laoreet et finibus non, convallis ut enim. Nunc dapibus ornare erat id malesuada. Donec tincidunt cursus purus. Quisque elementum blandit elementum.
+             </p>
+           </div>
+
+        </div>
+        
+      </div>
+    </main>
+    
+  </div>
+
+</section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--color-dark) 0%, rgba(15, 23, 42, 0.95) 100%);
+  }
+
+  .profile-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2);
+  }
+
+  .hero-title {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .skill-tag {
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+  }
+
+  .cta-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1dd1db 100%);
+  }
+
+  .cta-primary:hover {
+    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
+  }
+
+  /* Enhanced Desktop navigation styles */
+  .nav-link-enhanced {
+    position: relative;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .nav-line {
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: var(--color-muted);
+    width: 40px;
+    margin-right: 16px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-text {
+    color: var(--color-muted);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    white-space: nowrap;
+  }
+
+  /* Active state - máxima prioridad */
+  .nav-link-enhanced.active .nav-line {
+    width: 80px !important;
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: var(--color-light) !important;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-link-enhanced.active .nav-text {
+    color: var(--color-light) !important;
+    transform: translateX(12px) !important;
+  }
+
+  /* Hover effect SOLO para elementos NO activos */
+  .nav-link-enhanced:not(.active):hover .nav-line {
+    width: 80px;
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: var(--color-light);
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-link-enhanced:not(.active):hover .nav-text {
+    color: var(--color-light);
+    transform: translateX(12px);
+  }
+
+  /* Focus state SOLO para elementos NO activos */
+  .nav-link-enhanced:not(.active):focus {
+    outline: none;
+  }
+
+  .nav-link-enhanced:not(.active):focus .nav-line {
+    width: 80px;
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: var(--color-light);
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-link-enhanced:not(.active):focus .nav-text {
+    color: var(--color-light);
+    transform: translateX(12px);
+  }
+
+  /* Click state SOLO para elementos NO activos */
+  .nav-link-enhanced:not(.active):active .nav-line {
+    width: 80px;
+    height: 1px;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: var(--color-light);
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .nav-link-enhanced:not(.active):active .nav-text {
+    color: var(--color-light);
+    transform: translateX(12px);
+  }
+
+  /* Desktop layout adjustments */
+  @media (min-width: 1024px) {
+    .hero-section {
+      background: var(--color-dark);
+    }
+    
+    aside {
+      background: linear-gradient(135deg, var(--color-dark) 0%, rgba(15, 23, 42, 0.95) 100%);
+      height: calc(100vh - 4rem); /* Adjust for header height */
+    }
+    
+    /* Ensure proper spacing and containment */
+    .hero-container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hero-container {
+      max-width: 2xl;
+    }
+    
+    .profile-image {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+</style>
+
+<script>
+  // Desktop navigation menu active state management
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll<HTMLElement>('.nav-link-enhanced');
+    
+    console.log('Navigation initialized with', navLinks.length, 'links');
+    
+    // Function to deactivate all navigation items
+    function deactivateAll() {
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        // Force reflow to ensure styles are updated
+        link.offsetHeight;
+        console.log(`Deactivated: ${link.querySelector('.nav-text')?.textContent}`);
+      });
+    }
+    
+    // Function to activate a specific navigation item
+    function activate(link: HTMLElement) {
+      link.classList.add('active');
+      // Force reflow to ensure styles are updated
+      link.offsetHeight;
+      console.log(`Activated: ${link.querySelector('.nav-text')?.textContent}`);
+    }
+    
+    // Add click event to each navigation link
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        console.log(`Clicked on: ${link.querySelector('.nav-text')?.textContent}`);
+        
+        // Step 1: Deactivate ALL links (including the default active one)
+        deactivateAll();
+        
+        // Small delay to ensure deactivation is processed
+        setTimeout(() => {
+          // Step 2: Activate ONLY the clicked link
+          activate(link);
+        }, 10);
+      });
+    });
+    
+    // Initialize: Set first option as active by default if none is active
+    const hasActiveLink = Array.from(navLinks).some(link => link.classList.contains('active'));
+    if (!hasActiveLink && navLinks.length > 0) {
+      activate(navLinks[0]);
+      console.log('Default activation: SOBRE MÍ');
+    }
+  });
+</script> 

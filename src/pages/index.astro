@@ -1,22 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/ui/Hero.astro";
 ---
 
 <BaseLayout title="Brandon Corpas - Portafolio" description="Página De Inicio">
-  <img
-  src="/images/profile/profile.jpg"
-  alt="Foto de Brandon Corpas"
-  class="w-24 h-24 mx-auto rounded-full border-4 border-primary"
-  />
-  <h1 class="text-2xl font-bold">Brandon Corpas</h1>
-  <p class="text-sm leading-relaxed">
-    Soy un desarrollador web <strong class="text-primary">Full-stack</strong> e <strong
-      class="text-primary">Ingeniero de Sistemas en formación</strong
-    >.<br />
-    Ayudo a desarrollar soluciones web como sitios, aplicaciones, landing pages, portales
-    y portafolios profesionales.<br />
-    También puedo integrarme en equipos colaborativos, aportando desde el rol de Full-stack
-    developer y compartiendo mis conocimientos técnicos para alcanzar los objetivos
-    del proyecto.
-  </p>
+  <Hero />
 </BaseLayout>
