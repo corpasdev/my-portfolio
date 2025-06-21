@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/sections/Hero.astro";
 import About from "@components/sections/About.astro";
+import Experience from "@components/sections/Experience.astro";
 
 const title = "Brandon Corpas";
 const description =
@@ -11,19 +12,47 @@ const description =
 <BaseLayout title={title} description={description}>
   <main class="main-section min-h-screen bg-dark">
 
-    <div class="lg:hidden flex">
-      <Hero />
+    <!-- Mobile Layout -->
+    <div class="lg:hidden">
+      <div class="min-h-screen flex flex-col">
+        <!-- Hero Section for Mobile -->
+        <section class="flex-1 flex items-center justify-center py-12 pt-4">
+          <Hero />
+        </section>
+        
+        <!-- About Section for Mobile -->
+        <section class="flex-1 flex items-center justify-center py-8 bg-gradient-to-b from-dark to-dark/95">
+          <About />
+        </section>
+
+        <!-- Experience Section for Mobile -->
+        <section class="flex-1 flex items-center justify-center py-8 bg-gradient-to-b from-dark/95 to-dark/90">
+          <Experience />
+        </section>
+      </div>
     </div>
 
-    <div class="hidden lg:flex h-screen mt-8">
+    <!-- Desktop Layout -->
+    <div class="hero-desktop hidden lg:flex min-h-screen">
       
+      <!-- Left Side - Hero (Fixed) -->
       <aside class="fixed top-16 w-1/2 max-w-[35%] h-screen bg-dark block pr-0 pl-0 flex items-center justify-center px-8 xl:px-0">
         <Hero />
       </aside>
 
-      <main class="ml-auto w-1/2 min-h-screen flex items-center justify-center">
-        <div class="flex justify-center h-screen w-full pr-8 xl:pr-12">
-          <About />
+      <!-- Right Side - Scrollable Content -->
+      <main class="ml-auto w-1/2 min-h-screen">
+        <div class="space-y-16 py-16 pr-8 xl:pr-12">
+          
+          <!-- About Section -->
+          <section id="sobre-mi" class="min-h-screen flex items-center justify-center">
+            <About />
+          </section>
+          
+          <!-- Experience Section -->
+          <section id="experiencia" class="min-h-screen flex items-center justify-center">
+            <Experience />
+          </section>
         </div>
       </main>
       

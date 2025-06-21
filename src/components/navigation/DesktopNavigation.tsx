@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface NavigationItem {
@@ -32,10 +32,69 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
 }) => {
   const [activeId, setActiveId] = useState<string>(initialActiveId);
 
+  // Función para scroll suave a las secciones
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Altura aproximada del header + padding
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Detectar la sección activa basada en el scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerHeight = 80;
+      const sections = navigationItems.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id)
+      })).filter(section => section.element);
+
+      let currentActiveId = activeId;
+
+      for (const section of sections) {
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect();
+          // Ajustar la detección considerando el header
+          const isVisible = rect.top <= headerHeight + 50 && rect.bottom >= headerHeight + 50;
+          
+          if (isVisible) {
+            currentActiveId = section.id;
+            break;
+          }
+        }
+      }
+
+      if (currentActiveId !== activeId) {
+        setActiveId(currentActiveId);
+      }
+    };
+
+    // Throttle scroll events
+    let ticking = false;
+    const throttledHandleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', throttledHandleScroll);
+    return () => window.removeEventListener('scroll', throttledHandleScroll);
+  }, [activeId]);
+
   const handleItemClick = (id: string, href: string) => {
     setActiveId(id);
-    // Opcional: manejar navegación
-    // window.location.hash = href;
+    scrollToSection(id);
   };
 
   return (
