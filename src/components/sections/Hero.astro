@@ -1,11 +1,10 @@
 ---
-import About from './About.astro';
 import DesktopNavigation from '../../components/navigation/DesktopNavigation.tsx';
 ---
 
-<section class="hero-section min-h-screen bg-dark">
+<section class="hero-section">
   
-  <!-- Mobile Layout -->
+  <!-- Mobile -->
   <div class="lg:hidden flex items-center justify-center px-4 py-12 min-h-screen">
     <div class="hero-container max-w-md mx-auto text-center space-y-8">
       
@@ -89,97 +88,64 @@ import DesktopNavigation from '../../components/navigation/DesktopNavigation.tsx
     </div>
   </div>
 
-  <!-- Desktop Layout -->
-  <div class="hidden lg:flex h-screen mt-8">
+  <!-- Desktop  -->
+  <div class="hidden lg:flex">
+  <div class="max-w-md xl:max-w-lg xl:space-y-4">
     
-    <!-- Fixed Left Column (Aside) -->
-    <aside class="fixed top-16 w-1/2 max-w-[35%] h-screen bg-dark block pr-0 pl-0 flex items-center justify-center px-8 xl:px-0">
-      <div class="max-w-md xl:max-w-lg xl:space-y-4">
+    <header class="hero-header space-y-4 xl:space-y-6">
+      <h1 class="hero-title font-bold text-light leading-tight xl:mb-[12px]">
+        <span class="text-base text-light">Hola, soy</span>
+        <span class="text-primary block mt-2 mb-2 xl:mb-[12px] text-3xl xl:text-4xl">Brandon Corpas</span>
+      </h1>
+      
+      <h2 class="hero-subtitle text-lg xl:text-xl font-light text-light">
+        Desarrollador Full Stack
+      </h2>
+    </header>
+
+    <div class="hero-description space-y-4 xl:space-y-6">
+      <p class="text-muted text-base xl:text-[17px] leading-relaxed">
+        Especializado en crear experiencias web modernas y escalables con tecnologías de vanguardia.
+      </p>
+    </div>
+
+    <div class="hero-cta space-y-6 mt-12">
+      <div class="flex flex-col xl:flex-row gap-4">
+        <a 
+          href="https://api.whatsapp.com/send?phone=573332557619&text=Hola%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-primary inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/25 transform hover:scale-105 text-sm xl:text-base"
+        >
+          <span>Contáctame</span>
+          <!-- WhatsApp Icon -->
+          <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+          </svg>
+          <!-- Arrow Icon -->
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
         
-        <!-- Main Heading -->
-        <header class="hero-header space-y-4 xl:space-y-6">
-          <h1 class="hero-title font-bold text-light leading-tight xl:mb-[12px]">
-            <span class="text-base text-light">Hola, soy</span>
-            <span class="text-primary block mt-2 mb-2 xl:mb-[12px] text-3xl xl:text-4xl">Brandon Corpas</span>
-          </h1>
-          
-          <h2 class="hero-subtitle text-lg xl:text-xl font-light text-light">
-            Desarrollador Full Stack
-          </h2>
-        </header>
-
-        <!-- Description -->
-        <div class="hero-description space-y-4 xl:space-y-6">
-          <p class="text-muted text-base xl:text-[17px] leading-relaxed">
-            Especializado en crear experiencias web modernas y escalables con tecnologías de vanguardia.
-          </p>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="hero-cta space-y-6 mt-12">
-          <div class="flex flex-col xl:flex-row gap-4">
-            <a 
-              href="https://api.whatsapp.com/send?phone=573332557619&text=Hola%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." 
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-primary inline-flex items-center justify-center px-8 py-4 bg-primary text-dark font-semibold rounded-full hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-primary/25 transform hover:scale-105 text-sm xl:text-base"
-            >
-              <span>Contáctame</span>
-              <!-- WhatsApp Icon -->
-              <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-              </svg>
-              <!-- Arrow Icon -->
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
-            
-            <a 
-              href="/resume.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-secondary inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-dark transition-all duration-300 text-sm xl:text-base"
-            >
-            Descargar CV
-            </a>
-          </div>
-        </div>
-
-        <!-- Navigation Menu Component with Framer Motion -->
-        <DesktopNavigation client:load />
-        
+        <a 
+          href="/resume.pdf" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-secondary inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-dark transition-all duration-300 text-sm xl:text-base"
+        >
+        Descargar CV
+        </a>
       </div>
-    </aside>
+    </div>
 
-    <!-- Scrollable Right Column -->
-    <main class="ml-auto w-1/2 min-h-screen flex items-center justify-center">
-      <div class="flex justify-center h-screen w-full pr-8 xl:pr-12">
-        
-        <!-- About Me Component with Framer Motion -->
-        <About />
-        
-      </div>
-    </main>
+    <DesktopNavigation client:load />
     
   </div>
-
+  </div>
 </section>
 
 <style>
-  .hero-section {
-    background: linear-gradient(135deg, var(--color-dark) 0%, rgba(15, 23, 42, 0.95) 100%);
-  }
-
-  .profile-image {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .profile-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2);
-  }
-
   .hero-title {
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
@@ -203,18 +169,7 @@ import DesktopNavigation from '../../components/navigation/DesktopNavigation.tsx
     box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
   }
 
-  /* Desktop layout adjustments */
   @media (min-width: 1024px) {
-    .hero-section {
-      background: var(--color-dark);
-    }
-    
-    aside {
-      background: linear-gradient(135deg, var(--color-dark) 0%, rgba(15, 23, 42, 0.95) 100%);
-      height: calc(100vh - 4rem); /* Adjust for header height */
-    }
-    
-    /* Ensure proper spacing and containment */
     .hero-container {
       max-width: 100%;
       padding-left: 0;
@@ -222,7 +177,6 @@ import DesktopNavigation from '../../components/navigation/DesktopNavigation.tsx
     }
   }
 
-  /* Responsive adjustments for mobile */
   @media (min-width: 640px) and (max-width: 1023px) {
     .hero-container {
       max-width: 2xl;

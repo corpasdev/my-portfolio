@@ -1,11 +1,58 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/sections/Hero.astro";
+import About from "@components/sections/About.astro";
 
 const title = "Brandon Corpas";
-const description = "Soy un desarrollador web Full-Stack e ingeniero de sistemas en formación, especializado en crear experiencias web modernas, accesibles y escalables con tecnologías de vanguardia, siempre centradas en el usuario.";
+const description =
+  "Soy un desarrollador web Full-Stack e ingeniero de sistemas en formación, especializado en crear experiencias web modernas, accesibles y escalables con tecnologías de vanguardia, siempre centradas en el usuario.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <Hero />
+  <main class="main-section min-h-screen bg-dark">
+
+    <div class="lg:hidden flex">
+      <Hero />
+    </div>
+
+    <div class="hidden lg:flex h-screen mt-8">
+      
+      <aside class="fixed top-16 w-1/2 max-w-[35%] h-screen bg-dark block pr-0 pl-0 flex items-center justify-center px-8 xl:px-0">
+        <Hero />
+      </aside>
+
+      <main class="ml-auto w-1/2 min-h-screen flex items-center justify-center">
+        <div class="flex justify-center h-screen w-full pr-8 xl:pr-12">
+          <About />
+        </div>
+      </main>
+      
+    </div>
+
+  </main>
 </BaseLayout>
+
+<style>
+  .main-section {
+    background: linear-gradient(
+      135deg,
+      var(--color-dark) 0%,
+      rgba(15, 23, 42, 0.95) 100%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .main-section {
+      background: var(--color-dark);
+    }
+
+    aside {
+      background: linear-gradient(
+        135deg,
+        var(--color-dark) 0%,
+        rgba(15, 23, 42, 0.95) 100%
+      );
+      height: calc(100vh - 4rem);
+    }
+  }
+</style>
