@@ -1,1 +1,114 @@
-<header></header>
+---
+import MobileMenuWrapper from '@components/ui/MobileMenuWrapper';
+import LanguageSelectorWrapper from '@components/ui/LanguageSelectorWrapper';
+---
+
+<header class="flex justify-between items-center p-4 relative">
+  <!-- Logo positioned on the left -->
+  <div class="flex items-center">
+    <a href="/" class="relative z-50">
+      <img src="/images/logo/logo.png" alt="Logo" class="h-8">
+    </a>
+  </div>
+  
+  <!-- Desktop and mobile controls -->
+  <div class="flex items-center space-x-8 sm:space-x-6">
+    <!-- Desktop status indicator - hidden on mobile, visible on desktop -->
+
+    <div class="hidden status-badge lg:inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+      <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+      <span class="text-primary text-sm font-medium">Disponible para trabajar</span>
+    </div>
+
+    <!-- Mobile Menu Component -->
+    <MobileMenuWrapper client:load />
+    
+    <!-- Language Selector Component -->
+    <LanguageSelectorWrapper client:load />
+  </div>
+</header>
+
+<!-- Mobile menu overlay - positioned outside header -->
+<div 
+  id="mobile-menu-overlay"
+  class="fixed inset-0 bg-dark z-[65] flex flex-col items-center justify-center space-y-8 transition-all duration-300 ease-in-out opacity-0 invisible lg:hidden"
+>
+  <nav class="flex flex-col items-center space-y-6 text-white text-xl">
+    <a href="/sobre-mi" class="menu-link hover:opacity-75 transition-opacity">SOBRE MÍ</a>
+    <a href="/experiencia" class="menu-link hover:opacity-75 transition-opacity">EXPERIENCIA</a>
+    <a href="/proyectos" class="menu-link hover:opacity-75 transition-opacity">PROYECTOS</a>
+    <a href="/servicios" class="menu-link hover:opacity-75 transition-opacity">SERVICIOS</a>
+    <a href="/contactos" class="menu-link hover:opacity-75 transition-opacity">CONTACTOS</a>
+  </nav>
+</div>
+
+<style>
+  /* Custom styles for mobile menu */
+  .hamburger-lines.active .line1 {
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+  
+  .hamburger-lines.active .line2 {
+    transform: rotate(-45deg) translate(3px, -3px);
+  }
+  
+  #mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const hamburgerLines = menuToggle?.querySelector('.hamburger-lines');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        hamburgerLines?.classList.add('active');
+        menuOverlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        hamburgerLines?.classList.remove('active');
+        menuOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closeMenu() {
+      if (isMenuOpen) {
+        isMenuOpen = false;
+        hamburgerLines?.classList.remove('active');
+        menuOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Event listeners
+    menuToggle?.addEventListener('click', toggleMenu);
+    
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking on overlay background
+    menuOverlay?.addEventListener('click', (e) => {
+      if (e.target === menuOverlay) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+  });
+</script>
