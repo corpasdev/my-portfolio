@@ -6,10 +6,11 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-import Footer from '../components/common/Footer.astro';
-import BaseHead from '../components/common/BaseHead.astro';
-import "../styles/global.css";
-
+import Header from '@components/common/Header.astro';
+import Footer from '@components/common/Footer.astro';
+import BaseHead from '@components/common/BaseHead.astro';
+import PageLoaderWrapper from '@components/ui/PageLoaderWrapper';
+import "@styles/global.css";
 ---
 
 <html lang="es">
@@ -18,11 +19,19 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <BaseHead title={title} description={description} />
   </head>
-  <body
-    class="min-h-screen bg-dark text-light flex items-center justify-center font-sans">
-    <main class="bg-light text-dark p-8 rounded-2xl shadow-2xl max-w-md w-full text-center space-y-4 border border-muted">
-      <slot />
-    </main>
-    <Footer />
+  <body class="min-h-screen bg-dark text-muted">
+    <!-- Header outside of PageLoaderWrapper to avoid conflicts -->
+    <div class="bg-dark sticky top-0 z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-8">
+      <Header />
+    </div>
+    
+    <PageLoaderWrapper client:load>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main>
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </PageLoaderWrapper>
   </body>
 </html>
