@@ -172,7 +172,7 @@ const LanguageSelector = ({
                 <motion.button
                   key={language.code}
                   onClick={() => handleLanguageChange(language.code)}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 text-sm text-left transition-all duration-200 ${
+                  className={`w-full flex items-center space-x-3 px-4 py-3 text-sm text-left transition-all duration-200 cursor-pointer ${
                     selectedLanguage === language.code
                       ? 'bg-primary/15 text-primary border-l-2 border-primary'
                       : 'text-white/90 hover:bg-gray-800/60'
